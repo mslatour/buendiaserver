@@ -92,7 +92,7 @@ class SystemTest(unittest.TestCase):
         # Verify that special characters in data don't cause JSON syntax errors.
         patients = self.get_json('/patients')
         self.assertEqual(1, len(patients))
-        self.assertEqual('{!"}', patients[0]['given_name'])
+        self.assertEqual('{"}', patients[0]['given_name'])
 
     def test_unicode(self):
         """Test support for unicode in the Patient API."""
